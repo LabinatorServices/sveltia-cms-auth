@@ -4,15 +4,13 @@ allowBuilds:
   unrs-resolver: false
   workerd: false
 
-auditConfig:
-  ignoreGhsas:
-    # braces, used only in Stylelint
-    # https://github.com/advisories/GHSA-vfj7-8cjw-p6xm
-    - GHSA-vfj7-8cjw-p6xm
-
 engineStrict: true
 
 minimumReleaseAge: 1440
+
+overrides:
+  # Security update
+  undici@>=7.0.0 <7.30.1: ^7.30.1
 
 # Work around https://github.com/sveltia/sveltia-cms-auth/issues/17
 packages:
